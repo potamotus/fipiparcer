@@ -181,7 +181,7 @@ def build_docx(
     out_path: Path,
     with_answer_squares: bool = True,
     card_width_cm: float = CARD_WIDTH_CM,
-    per_page: int = 4,
+    per_page: int = 0,
 ) -> None:
     """Собрать docx: каждая карточка = отдельная таблица 1×1.
 

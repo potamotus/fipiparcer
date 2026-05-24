@@ -184,6 +184,7 @@ async def extract_tasks(
             viewport=VIEWPORT,
             user_agent=USER_AGENT,
             locale="ru-RU",
+            ignore_https_errors=True,
         )
         page = await ctx.new_page()
         try:
@@ -196,7 +197,7 @@ async def extract_tasks(
                 if page_num == 1:
                     url = base_url
                 else:
-                    url = f"{base_url}&pagenum={page_num}"
+                    url = f"{base_url}&page={page_num}"
                 print(f"[extract] page {page_num}: open {url}", file=sys.stderr)
                 raw = await _load_page(page, url)
 
